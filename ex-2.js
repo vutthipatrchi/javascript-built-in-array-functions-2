@@ -374,5 +374,8 @@ const bills = [
 ];
 
 // Start coding here
-
-const newBills;
+function onlyMemberWithInfo(member){
+    return member.filter((info) => info.member !== null)
+}
+const newBills = onlyMemberWithInfo(bills);
+console.log(newBills)

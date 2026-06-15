@@ -374,3 +374,8 @@ const bills = [
 ];
 
 // Start coding here
+function calculateTotal(item){ //หา total น่าจะใช้ reduce
+    const sumTotal = item.reduce((acc, curr) => acc + curr.total,0);
+    return `"Total bill transaction is ${sumTotal}"`
+}
+console.log(calculateTotal(bills))
