@@ -3,11 +3,7 @@ function isPalindrome(string) {
   const splitWord = string.split('');
   const reverseWord = splitWord.reverse();
   const joinWord = reverseWord.join('');
-  if (string === joinWord.trim()){
-    return true
-  } else {
-    return false
-  }
+  return string.trim() === joinWord.trim()
 }
 
 //Example case
