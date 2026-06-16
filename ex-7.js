@@ -1,5 +1,12 @@
 function isPalindrome(string) {
   // Start coding here
+  let word = string.split("").reverse().join('').trim()
+  if(word === string){
+    return true
+  } else {
+    return false
+  }
+  return word
 }
 
 //Example case

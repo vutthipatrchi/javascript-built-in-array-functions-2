@@ -375,4 +375,12 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+const totalPaidByLocation = bills.reduce((sum, num) => { 
+    if (!sum[num.location]) { // เช็คว่าจังหวัดนี้มีอยู่ใน sum แล้วหรือยัง
+        sum[num.location] = 0; // ตั้งค่าเริ่มต้นของจังหวัดนั้นเป็น 0
+    }
+    sum[num.location] += num.total; // + ยอด total เข้าไปในจังหวัดนั้น
+    return sum // return sum ที่อัพเดตแล้วไปรอบถัดไป
+}, {}); // ค่าเริ่มต้นของ sum คือ object ว่าง
+
+console.log(totalPaidByLocation);
