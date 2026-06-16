@@ -374,5 +374,21 @@ const bills = [
 ];
 
 // Start coding here
+const totalPaidByLocation = bills.reduce((result, bill) => {
+  const foundLocation = result.find(
+    item => item.location === bill.location
+  );
 
-const totalPaidByLocation;
+  if (foundLocation) {
+    foundLocation.total += bill.total;
+  } else {
+    result.push({
+      location: bill.location,
+      total: bill.total,
+    });
+  }
+
+  return result;
+}, []);
+
+console.log(totalPaidByLocation);
